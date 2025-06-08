@@ -79,3 +79,65 @@ Monthly Revenue Trend
 
 (You can open the .png files in any image viewer.)
 
+🧩 Technical Challenges
+
+Database Path Errors
+
+Initially trying to access a database file with an incorrect or relative path (../db/store.db) could lead to sqlite3.OperationalError.
+
+Missing Directories (e.g., output/)
+
+Attempting to save charts before ensuring the output directory exists caused FileNotFoundError.
+
+Module Import Errors
+
+Missing libraries like pandas or matplotlib can halt execution until dependencies are installed.
+
+Wrong SQLite3 Installation Assumption
+
+Trying to pip install sqlite3 (which is built-in with Python) resulted in an error and confusion.
+
+Chart Not Updating or Displaying
+
+Forgetting to use plt.tight_layout() or not closing the figure before saving could lead to overlapping chart elements or failed saves.
+
+💻 Environment-Related Challenges
+
+Python Not Recognized
+
+If Python is not added to PATH, commands like python or pip won’t run on terminal.
+
+Different Python Versions
+
+Running into incompatibilities or confusion due to multiple installed versions (e.g., Python 3.13).
+
+Windows-Specific File Handling
+
+Relative paths behave differently on Windows, leading to confusion with '../output' vs 'output'.
+
+🧠 Logical Challenges
+
+Understanding SQL Joins
+
+Combining customer, product, and purchase tables using correct JOIN logic can be tricky.
+
+Datetime Formatting
+
+Extracting the month using strftime('%Y-%m') may be unfamiliar if new to SQL date functions.
+
+Visualization Missteps
+
+Choosing the right type of chart (bar vs. line) or setting axis labels for clarity required thoughtful decisions.
+
+🔄 Debugging Issues
+
+Silent Failures
+
+Some errors (like saving to a non-existent folder) don’t stop the script, making debugging harder.
+
+Database Not Opening
+
+Opening the database before it's populated or without correct permissions results in cryptic SQLite errors.
+
+
+
